@@ -1,0 +1,22 @@
+<div id="topmenu-area"><!--start topmenu-area-->
+  <div class="top_rgt">
+    <%= render :partial => "home/login_badge" %>
+  </div>
+</div><!--end topmenu-area-->
+<div class="logo_area"><!--start logo_area-->
+  <div id="logo">
+    <%= header_logo %>
+  </div>
+  <div id="menu-area">
+    <ul>
+      <% if @current_feed %>
+        <li class="home"><%= link_to "Home", feed_root_url(:subdomain => @current_feed.user.login), :class => 'glow' %></li>
+      <% else %>
+        <li class="home"><%= link_to "Home", feed_root_url(:subdomain => false), :class => 'glow' %></li>
+      <% end %>
+      <% if false #current_user %>
+        <li class="my_page"><%= link_to "My Page", profile_path, :class => 'glow' %></li>
+      <% end %>
+    </ul>
+  </div>
+</div><!--end logo_area-->

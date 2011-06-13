@@ -1,0 +1,8 @@
+.idea
+.bundle
+db/*.sqlite3
+log/*.log
+tmp/**/*
+config/private_keys.yml
+config/twitter_auth.yml
+config/deploy.rb

@@ -1,0 +1,18 @@
+<% tweet = raw_tweet unless !tweet.nil? %>
+<% if !(!tweet['user']['protected'].nil? && !tweet['user']['protected'] == "true") %>
+  <li id="<%= "tweet_#{tweet['id']}" %>" class="<%= submitted_class( session, tweet ) %> tweet raw_tweet_body">
+    <span class="raw_thumb">
+      <img id="<%= id %>_thumb" class="thumb_image" src="<%=  tweet['user']['profile_image_url'] %>" alt ="<%= tweet['user']['screen_name'] %>"/>
+    </span>
+
+    <span class="raw_status_body">
+      
+      <%= link_to tweet['user']['screen_name'] + ':', 'http://twitter.com/' + tweet['user']['screen_name'], :target => '_blank' %> <span class="text"><%= tweet['text'] %></span>
+      <br/>
+      <span class="status_stats"><abbr class="timeago" title="<%= tweet['created_at'] %>"><%= tweet['created_at'] %></abbr></span>
+      <%= link_to "Nominate", {:controller=>"tweet", :action=>"submit_retweet",
+        :tweet_id=>tweet['id']}, :class=>"nominate_link"
+      %>
+    </span>
+  </li>
+<% end %>

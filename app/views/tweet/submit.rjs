@@ -1,0 +1,7 @@
+
+page.replace_html :tweets, :partial => "raw_tweet", :collection => @tweets
+page.replace :more_raw_tweets, :partial => "more_tweets"
+page.call :prepTweets
+page.call :resetSubmit
+page.call :callTimeago
+flash.discard

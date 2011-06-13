@@ -1,0 +1,48 @@
+<% content_for :meta do %>
+  <meta property="og:title" content='<%= @current_feed.user.name %>'/>
+  <meta property="og:site_name" content='Feed Ladder'/>
+  <meta property="og:type" content="website" />
+<% end %>
+
+<% content_for :css do %>
+  <style type="text/css">
+  .ui-helper-reset {
+    font-size:13px;
+    line-height:0.5;
+  }
+  .ui-tabs .ui-tabs-nav {
+    background: none;
+    border-bottom:1px solid #4297D7;
+    border-top:none;
+    border-left:none;
+    border-right:none;
+  }
+
+  .ui-tabs .ui-tabs-panel {
+    padding: 1em 0.3em;
+  }
+
+</style>
+<% end %>
+
+  <div class="box">
+    <div class="boxCap"><!----></div>
+      <div class="box_static_body">
+        <% if current_user or @current_feed.allow_anonymous_submits %>
+          <%= render :partial => "tweet/publisher", :locals => {:expanded_publisher => true}  %>
+        <% else %>
+            <div id="signup_copy" style="padding: 2px 0 2px 0;">
+              <div>
+                Login to submit:
+              </div>
+              <div>
+                <%= link_to( image_tag( "twitter-dark.png" ), login_path ) %>
+              </div>
+            </div>
+        <% end %>
+      </div>
+    <div class="boxBottom"><!----></div>
+  </div>
+
+
+<%= render :partial => "feed/main_tweets" %>

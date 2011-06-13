@@ -1,0 +1,29 @@
+<div class="latestNews_box"><!--start latestNews_box-->
+  <div class="latest_bg">
+    <div class="latest_top">
+      <div class="latest_btm">
+        <div class="content_latestNews_box">
+          <h2>Available Feeds</h2>
+             
+             <% @top_feeds.each do |feed| %>
+              <hr>
+              <table border="0" cellspacing="2">
+                <tr>
+                  <td style="padding: 0 5px 5px 0;" rowspan="2"><%= image_tag feed.user[:profile_image_url]  %></td>
+                  <td>
+                    <span style="font-size: 1.17em;font-weight: bold;">
+                      <%=  link_to h(feed.user.name), feed_root_url(:subdomain => feed.user.login) %>
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Followers: <%= feed.user[:followers_count]  %></td>
+                </tr>
+              </table>
+             <% end %>
+             <hr>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

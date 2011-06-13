@@ -1,0 +1,7 @@
+
+<div style="width:auto;text-align:center;">
+<%= link_to 'more tweets',
+    {:controller=>"tweet", :action=>"more_tweets", :last_id =>@last_id, :screen_name => @screen_name},
+    :id=>"more_raw_tweets"
+%>
+</div>

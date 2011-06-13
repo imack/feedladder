@@ -1,0 +1,23 @@
+<% if current_user %>
+  <table id="login_badge" border="0" style="height: 40px; margin-top: -5px;">
+    <tr>
+      <!-- <td>
+        <img src="<%= current_user[:profile_image_url] %>" alt="<%= current_user[:name] %>" />
+      </td> -->
+      <td>
+        <%= "@" + current_user[:login] %>
+      </td>
+      <td>
+        &nbsp; <%= link_to 'logout', logout_path %>
+      </td>
+    </tr>
+  </table>
+<% else %>
+  <table id="login_badge" border="0" style="height: 40px; margin-top: -5px;">
+    <tr>
+      <td>
+        <%= link_to 'login', login_path %>
+      </td>
+    </tr>
+  </table>
+<% end %>

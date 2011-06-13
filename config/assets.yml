@@ -1,0 +1,17 @@
+package_assets:         on
+
+javascripts:
+  workspace:
+    - public/javascripts/application.js
+    - public/javascripts/jquery.jgrowl.min.js
+    - public/javascripts/jquery.autocomplete.min.js
+    - public/javascripts/jquery.timeago.js
+    - public/javascripts/jquery.rails.js
+
+stylesheets:
+  common:
+    - public/stylesheets/application.css
+    - public/stylesheets/jquery.autocomplete.css
+    - public/stylesheets/jquery.jgrowl.css
+    - public/stylesheets/clubnight/reset.css
+    - public/stylesheets/clubnight/master.css

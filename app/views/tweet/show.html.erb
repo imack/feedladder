@@ -1,0 +1,37 @@
+<% content_for :meta do %>
+  <%= render :partial => "like_meta_data", :locals => {:tweet => @tweet } %>
+<% end %>
+
+<% content_for :css do %>
+  <style type="text/css">
+  .ui-helper-reset {
+    font-size:13px;
+    line-height:0.5;
+  }
+  .ui-tabs .ui-tabs-nav {
+    background: none;
+    border-bottom:1px solid #4297D7;
+    border-top:none;
+    border-left:none;
+    border-right:none;
+  }
+
+  .ui-tabs .ui-tabs-panel {
+    padding: 1em 0.3em;
+  }
+
+</style>
+<% end %>
+
+  <div class="box">
+    <div class="boxCap"><!----></div>
+      <div class="box_static_body">
+        <ul class='tweets'>
+          <%= render :partial => "tweet", :locals => {:tweet => @tweet, :auto_show => true} %>
+        </ul>
+      </div>
+    <div class="boxBottom"><!----></div>
+  </div>
+
+
+<%= render :partial => "feed/main_tweets" %>

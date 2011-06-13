@@ -1,0 +1,53 @@
+<% if @show_ads %>
+  <div id="top_ads" style="text-align:center;">
+    <script type="text/javascript"><!--
+    google_ad_client = "ca-pub-7840601014474638";
+    /* feedladder top middle */
+    google_ad_slot = "2575334559";
+    google_ad_width = 468;
+    google_ad_height = 60;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+    </script>
+  </div>
+<% end %>
+
+<div class="box">
+    <ul id="tabMenu">
+      <li class="tabstop selected left"><!----></li>
+      <li class="tabsbestof center "><!----></li>
+      <li class="tabsnew right"><!----></li>
+    </ul>
+
+    <div class="boxTop"><!----></div>
+    <div class="boxBody">
+    <div id="tabstop" class="show0 tweet_panel">
+      <ul id="top_tweets" class='tweets'>
+        <%= render :partial => "tweet/tweet", :collection =>@top_tweets %>
+      </ul>
+
+      <%= render :partial => "tweet/show_more_box", :locals => {:type => "top_tweets"} %>
+
+    </div>
+
+    <div id="tabsbestof"  class="show1 tweet_panel">
+      <ul id="best_tweets" class='tweets'>
+        <%= render :partial => "tweet/tweet", :collection =>@tweet_best %>
+      </ul>
+
+      <%= render :partial => "tweet/show_more_box", :locals => {:type => "best_tweets"} %>
+    </div>
+
+    <div id="tabsnew" class="show2 tweet_panel">
+      <ul id="new_tweets" class='tweets'>
+        <%= render :partial => "tweet/tweet", :collection => @new_tweets %>
+      </ul>
+      <%= render :partial => "tweet/show_more_box", :locals => {:type => "new_tweets"} %>
+    </div>
+
+  </div>
+
+</div>
+<div class="boxBottom"><!----></div>

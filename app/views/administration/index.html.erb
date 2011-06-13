@@ -1,0 +1,54 @@
+  <div class="box" style="overflow:hidden;">
+    <div class="boxCap"><!----></div>
+    <div class="box_static_body">
+
+      <h1>Admin Panel</h1>
+
+      <h2>Vitals</h2>
+          <table>
+            <tr>
+              <td>
+                User Count
+              </td>
+              <td>
+                <%= @user_count %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Live Quote Count
+              </td>
+              <td>
+                <%= @live_quote_count %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Total Quote Count
+              </td>
+              <td>
+                <%= @totalquote_count %>
+              </td>
+            </tr>
+          </table>
+
+          <h2>Last 10 Submitted Quotes</h2>
+
+          <table>
+            <tr>
+              <td>Quote</td>
+              <td>Nominator</td>
+              <td>Score</td>
+              
+            </tr>
+            <%  @last_10_quotes.each do |quote| %>
+              <tr>
+                <td><%= quote.text %></td>
+                <td><%= quote.user.login %></td>
+                <td><%= quote.rating %></td>
+                
+              </tr>
+            <% end %>
+          </table>
+      </div>
+  </div>

@@ -1,0 +1,200 @@
+<style type="text/css">
+      #demo-frame > div.demo { padding: 10px !important; }
+      #times span {
+              height:120px; float:left; margin:15px
+      }
+</style>
+
+
+<div class="left_side">
+  <h1>Editing feed</h1>
+
+  <%= form_for @feed, :as => :feed do |f| %>
+     <%= @feed.errors.full_messages %>
+
+    <h2>Info</h2>
+
+    <p>
+      <%= f.label :description %><br />
+      <%= f.text_area :description , :size => "50x5" %>
+    </p>
+
+    <p>
+      <%= f.label :facebook_page_url %><br />
+      <%= f.text_area :facebook_page_url, :size => "50x5" %>
+    </p>
+
+    <p>
+      <%= f.check_box :tag_enabled %>Allow tags<br/>
+      <div id="tag_title" style="display:none;">
+        <%= f.label :tag_title %><br />
+        <%= f.text_field :tag_title %>
+      </div>
+    </p>
+
+    <h2>Rules</h2>
+
+    <p>
+       <%= f.select :light_default_status, [ ["Submissions from logged in users don't need admin approval",2], ["All new Tweets need admin approval",1] ]  %>
+    </p>
+    <!--
+    <p>
+      <%= f.select :anonymous_votes, [ ["Any user can vote",false],["Only signed in Users can vote",true] ]  %>
+    </p>
+    -->
+    <p>
+      <%= f.select :allow_retweets, [ ["Don't Allow Retweet Submissions",false],["Allow Retweet Submissions",true] ]  %>
+    </p>
+
+    <p>
+      <%= f.select :allow_long_messages, [ ["Don't Allow Long Submissions",false],["Allow Long Submissions",true] ]  %>
+    </p>
+    <!--
+     <p>
+      <%= f.select :allow_long_tweets, [ ["Only allow Twitter-compliant submissions (140 character max)",0],["Allow longer submissions with links",1] ]  %>
+    </p>
+    -->
+    <p>
+      <%= f.select :allow_anonymous_submits, [ ["Users Must be Signed in to Submit",false],["Allow Anonymous Submits",true] ]  %>
+    </p>
+
+    <hr>
+
+    <%= f.hidden_field :tweet_schedule %>
+
+
+<div class="demo">
+
+  <p class="ui-state-default ui-corner-all ui-helper-clearfix" style="padding:4px;">
+  <span class="ui-icon" style="float:left; margin:-2px 5px 0 0;"></span>
+  Number of Tweets Per Day (<span id="master_count"></span>)
+  </p>
+
+  <div id="master" style="width:260px; margin:15px;"></div>
+
+  <p class="ui-state-default ui-corner-all" style="padding:4px;margin-top:4em;">
+  <span class="ui-icon" style="float:left; margin:-2px 5px 0 0;"></span>
+  Times for tweets
+  </p>
+
+  <div id="times">
+
+  </div>
+
+</div><!-- End demo -->
+<div class="demo-description" style="clear:left;">
+
+  <p id="show_times"></p>
+
+</div><!-- End demo-description -->
+
+<h2>Admins</h2>
+<p>
+  <span style="color:c0c0c0">Comma delimited twitter handle list (eg: @ev,@biz)</span><br />
+  <%= f.text_field :admin_users %>
+</p>
+
+    <p>
+      <%= f.submit 'Submit' %>
+    </p>
+  <% end %>
+
+</div>
+<script type="text/javascript">
+
+  var schedule_values = new Array();
+
+  function display_times(){
+    var parsed_times = new Array();
+
+    for (var i=0; i< schedule_values.length; i++){
+      parsed_times.push( schedule_values[i] + ":00" );
+    }
+
+    $("#show_times").html("Tweets will go out at: " + parsed_times.join(",") );
+    
+  }
+
+  function setup_time_bars(){
+    $("#times").html("");
+
+    for (var i=0; i < schedule_values.length; i++){
+      $("<span id='schedule_" + i + "'>" + schedule_values[i] + "</span>").appendTo("#times");
+    }
+
+    $("#times > span").each(function() {
+      // read initial values from markup and remove that
+      var value = parseInt($(this).text());
+      $(this).empty().slider({
+        value: value,
+        range: "min",
+        animate: true,
+        orientation: "vertical",
+        min: 0,
+        max: 23,
+        slide:  function(event, ui) {
+          var id = parseInt( $(this).attr("id").split("_")[1] );
+          schedule_values[id] = ui.value;
+          $("#feed_tweet_schedule").val( schedule_values.join(",") );
+          display_times();
+        },
+        step: 1
+      });
+    });
+    display_times();
+  }
+
+  $(function() {
+
+   if ( $("#feed_tag_enabled").is(":checked") ){
+      $("#tag_title").show();
+    } else {
+      $("#tag_title").hide();
+    }
+
+    $("#feed_tag_enabled").click(function(){
+      if ( $(this).is(":checked") ){
+        $("#tag_title").show();
+      } else {
+        $("#tag_title").hide();
+      }
+    });
+    
+    // setup master volume
+    schedule_values = $("#feed_tweet_schedule").val().split(",");
+
+    if (schedule_values.length == 1 && schedule_values[0] == ""){
+      //split can't return a 0-length array
+      schedule_values = new Array();
+    }
+
+    $("#master").slider({
+      orientation: "horizontal",
+      range: "min",
+      animate: true,
+      value:schedule_values.length,
+      min: 0,
+      max: 6,
+      step: 1,
+      slide:  function(event, ui) {
+        $("#master_count").html(ui.value);
+      },
+      stop: function(event, ui) {
+        while (ui.value > schedule_values.length){
+          schedule_values.push( 12 );
+        }
+        while (ui.value < schedule_values.length){
+          schedule_values.pop();
+        }
+        $("#feed_tweet_schedule").val( schedule_values.join(",") );
+        setup_time_bars();
+      }
+    });
+    
+    $("#master_count").html(schedule_values.length);
+    setup_time_bars();
+
+  });
+</script>
+
+

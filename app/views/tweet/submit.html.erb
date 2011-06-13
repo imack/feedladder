@@ -1,0 +1,38 @@
+
+<div class="box">
+  <div class="boxCap"><!----></div>
+  <div class="box_static_body">
+    
+  <h1>Submit</h1>
+
+  <div>
+    Quotes might not be funny without context, keep in mind most @profquotes readers won't have been in the class.
+  </div>
+
+  <%= render :partial => "tweet/publisher", :locals => {:expanded_publisher => true}  %>
+</div>
+<div class="boxBottom"><!----></div>
+</div>
+
+   <% if @current_feed[:allow_retweets] %>
+    <div class="box">
+      <div class="boxCap"><!----></div>
+      <div class="box_static_body">
+        <%= render :partial => "tweet/retweet_section"  %>
+      </div>
+    </div>
+    <div class="boxBottom"><!----></div>
+  <% end %>
+
+   <script type="text/javascript">
+
+    $(document).ready(function (){
+      $("#publisher_hidden").show();
+    })
+
+    $("#dialog").dialog({
+      autoOpen: false,
+      modal: true
+    });
+    
+  </script>

@@ -1,0 +1,6 @@
+<meta property="og:url" content="<%= "http://#{@current_feed.user.login}.feedladder.com/t/#{@tweet.id}" %>"/>
+<meta property="og:title" content='<%= @tweet.tag %> Prof Quote'/>
+<meta property="og:site_name" content="<%= @current_feed.user.name %>"/>
+<meta property="og:image" content="<%= @tweet.thumb_url %>"/>
+<meta property="og:type" content="article" />
+<meta property="og:description" content='<%= @tweet.text.gsub(/'/, "&#x27;")%>'/>

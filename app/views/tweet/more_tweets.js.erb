@@ -1,0 +1,14 @@
+
+$("#nominate_spin").remove();
+
+$("#tweets").append("<%= escape_javascript( render :partial => "tweet/raw_tweet", :collection =>@tweets ) %>");
+
+$("#more_tweets_box").html("<%= escape_javascript( render :partial => "tweet/more_tweets") %>");
+
+
+$("#last_id").val('<%= raw @last_id %>');
+
+prepTweets();
+callTimeago();
+
+

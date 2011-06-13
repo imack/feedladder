@@ -1,0 +1,13 @@
+<div class="box">
+  <div class="boxCap"><!----></div>
+    <div class="box_static_body">
+      <h2>Your Submitted quotes</h2>
+
+      <ul class='quotes'>
+          <%  @quotes.each_with_index do |quote, i|%>
+            <%= render :partial => "quote/quote", :locals => {:quote => quote, :i => i } %>
+          <% end %>
+      </ul>
+    </div>
+  <div class="boxBottom"><!-- --></div>
+</div>

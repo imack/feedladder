@@ -1,0 +1,124 @@
+<% content_for :css do %>
+  <style type="text/css">
+    .ui-button {
+      font-size: 0.7em;
+    }
+
+    .quote_submit_area{
+      max-width: 500px;
+      width: 500px;
+      margin-right: 5px;
+      max-height: 100px;
+    }
+
+  </style>
+<% end %>
+
+
+<% content_for :javascript do %>
+  <script type="text/javascript">
+      function twitter_compliance(){
+          var text_length = $("#tweet_text").val().length;
+          var school_length = $("#tweet_tag").val().length;
+
+          <% if !@current_feed[:allow_long_messages]  %>
+            var chars_left = 140 - text_length;
+    
+            if (text_length <= 140){
+              $("#twitter_compliant").html( chars_left );
+              $("#twitter_compliant").css('color', "green");
+              $( "#tweet_submit" ).button( "option", "disabled", false );
+            } else {
+              $("#twitter_compliant").html( chars_left );
+              $("#twitter_compliant").css('color', "red");
+              $( "#tweet_submit" ).button( "option", "disabled", true );
+            }
+
+          <% else %>
+              var chars_left = 500 - text_length;
+
+              if (text_length <= 140){
+                $("#twitter_compliant").html( chars_left );
+                $("#twitter_compliant").css('color', "green");
+                $( "#tweet_submit" ).button( "option", "disabled", false );
+              } else if (text_length <= 500){
+                $("#twitter_compliant").html( chars_left );
+                $("#twitter_compliant").css('color', "orange");
+                $( "#tweet_submit" ).button( "option", "disabled", false );
+              } else {
+                $("#twitter_compliant").html( chars_left );
+                $("#twitter_compliant").css('color', "red");
+                $( "#tweet_submit" ).button( "option", "disabled", true );
+              }
+
+          <% end %>
+
+          if (text_length <= 0 || school_length <=0){
+              $("#tweet_submit").button( "option", "disabled", true );
+          } else {
+              $("#tweet_submit").button( "option", "disabled", false );
+          }
+      }
+      $(document).ready( function(){
+        $( "#tweet_submit" ).button();
+
+        $("#submit_click").click( function(){
+          $("#submit_initial").hide(250);
+          $("#submit_pulldown").show(250);
+          return false;
+        });
+
+        twitter_compliance();
+
+        $("textarea").keyup( function (){
+          twitter_compliance();
+        });
+        $("textarea").mouseup( function (){
+          twitter_compliance();
+        });
+
+        $("#tweet_tag").keyup( function (){
+          twitter_compliance();
+        });
+
+        $("#tweet_tag").mouseup( function (){
+          twitter_compliance();
+        });
+
+        <% if expanded_publisher == true %>
+          $("#submit_initial").hide();
+          $("#submit_pulldown").show();
+        <% end %>
+      });
+
+  </script>
+<% end %>
+
+<div class="publisher">
+  <div id="submit_initial" style="color:blue;text-align:center;display:none;">
+    <a href="#" id="submit_click">Make Submission</a>
+  </div>
+  <div id="submit_pulldown" style="">
+    <%= form_for  @tweet, :as => :tweet, :url => { :controller=> "tweet", :action => "create" } do |t| %>
+      <span style="color:red;"><%= @tweet.errors.full_messages %></span>
+      <div class="formField">
+        <label for="text">Submit Quote: <%= raw '(<span id="twitter_compliant" style="color:green;">140</span>)'  %></label><br />
+        <%= t.text_area :text , :size => "67x3", :class => 'quote_submit_area' %>
+      </div>
+
+      <div id="publisher_lower">
+        <table border="0" style="width:500px;">
+          <tr>
+            <td>
+              <%= raw "#{@current_feed[:tag_title]}:&nbsp; #{t.text_field :tag}" unless !@current_feed[:tag_enabled] %>
+            </td>
+            <td align="right">
+              <%= t.submit "Submit" %>
+            </td>
+          </tr>
+        </table>
+      </div>
+    <% end %>
+  </div>
+</div>
+

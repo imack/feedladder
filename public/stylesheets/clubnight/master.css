@@ -1,0 +1,1611 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* ---------------------------------------------------------------------
+               GLOBAL STYLES - UNIVERSAL SELECTORS
+------------------------------------------------------------------------
+
+*/
+
+body {
+	font-size:12px;
+	background-color: #f0f0f0;
+	font-family:"Verdana", Geneva, sans-serif;
+}
+a {
+	color:#006ed5;
+	background:none;
+	text-decoration:none;
+}
+a.glow:hover {
+	color:#fff;
+	background-color:#006ed5;
+}
+.hide{
+	position:absolute;
+	left:-9999px;
+	display:none;
+}
+p {
+	color:#5d5d5d;
+	margin-bottom:10px;
+	font-size:12px;
+	line-height:1.6em;
+	margin-left:10px;
+}
+
+h1 {
+	padding:0px;
+	margin:0px;
+	color:#006ed5;
+	font-size:18px;
+	font-weight:bold;
+}
+
+h2 {
+	padding:0px;
+	margin:0px;
+	color:#006ed5;
+	font-size:14px;
+	font-weight:bold;
+}
+h3 {
+	padding:0px;
+	margin:0px;
+	color:#006ed5;
+	font-size:12px;
+	font-weight:normal;
+}
+
+h4 {
+	padding:0px;
+	margin:0px;
+	color:#006ed5;
+	font-size:10px;
+	font-weight:bold;
+}
+
+h5 {
+	padding:0px;
+	margin:0px;
+	color:#006ed5;
+	font-size:10px;
+	font-weight:normal;
+}
+
+
+/* ********* CLEAR FIX HACK ********* */
+
+.cf:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+.cf {
+	display: inline-block;
+}
+/* Hides from IE-mac \*/
+* html .cf {
+	height: 1%;
+}
+.cf {
+	display: block;
+}
+/* End hide from IE-mac */
+
+.clear {
+	clear:both
+}
+
+/* ********* MAIN CONTAINERS ********* */
+
+#main-container {
+	background:url(/images/clubnight/bg.jpg) top center repeat-x;
+	margin:0 auto;
+	text-align:center;
+	padding-top:9px;
+	overflow:hidden;
+	
+	
+}
+#main-area {
+	width:968px;
+	/*background-color:#a8a8a8;*/
+	padding:0;
+	margin:0 auto;
+	text-align:left;
+}
+.logo_area{
+	width:968px;
+	overflow:hidden;
+	height:59px;
+	padding-top:6px;
+}
+#logo {
+	width:196px;
+	height:48px;
+	margin:0;
+	padding-left:12px;
+	float:left;
+}
+
+#logo a {
+	border:none;
+	color:#999;
+}
+
+/* ********* Top MENU AREA ********* */
+
+#topmenu-area {
+	background:none;
+	width:522px;/*change*/
+	overflow:hidden;/*change*/
+	padding-left:446px;
+	height:31px;
+}
+#topmenu-area ul {
+list-style:none;
+	padding-top:5px;
+	float:left;
+	overflow:hidden;
+	width:210px;
+}
+#topmenu-area ul li {	
+	float:right;
+	padding:0;
+	margin:0;
+
+}
+#topmenu-area ul li a {
+	width:auto;
+	padding-right:20px;
+	background:none;
+	text-align:center;
+	display:block;
+	color:#F0F0F0;
+	font-size:12px;
+	margin:0 auto;
+}
+.top_img{
+	float:left;
+	overflow:hidden;
+	width:104px;
+}
+.top_img img{
+	float:left;
+	margin-right:10px;
+}
+.top_rgt{
+	float:right;
+	overflow:hidden;
+	width:418px;
+}
+.search{
+	width:192px;
+	float:left;
+	padding:0;
+	margin-right:13px;
+	height:25px;
+}
+
+.enter{
+	width:192px;
+	height:24px;
+	overflow:hidden;
+}
+
+.searchbtn{
+	background:url(/images/clubnight/searchbtn.jpg) no-repeat right;
+	border:none;
+	float:left;
+	padding-top:4px;
+	padding-left:0px;
+	font-size:12px;
+	color:#006ed5;
+	width:187px;
+	height:20px;
+	padding-left:5px;
+	font-family:Trebuchet MS;
+}
+/* ********* Top MENU AREA ********* */
+
+#menu-area {
+	width:700px;
+	padding-top:15px;
+	text-align:right;
+	float:right;
+}
+#menu-area ul {
+	list-style:none;
+	padding:0;
+}
+#menu-area ul li {	
+	padding:0;
+	margin:0;
+	display:inline;
+}
+#menu-area ul li a {
+	width:auto;
+	padding-right:20px;
+	text-align:center;
+	display:block;
+	background:none;
+	font-size:16px;
+	margin:0 auto;
+	color:#666;
+	display:inline;
+}
+
+#menu-area ul li a.active, #menu-area ul li a:hover{
+	color:#006ed5;
+}
+
+/* ********* CONTENT AREA ********* */
+
+#siteContent {
+	width:980px;
+	overflow:hidden;
+	padding:0;
+	margin:0 auto;
+}
+#leftContent {
+	width:558px;
+	margin-top:17px;
+	padding:0;
+	float:left;
+}
+
+#leftContent .feature {
+	width:558px;
+	height:323px;
+	padding:0;
+	margin:0;
+}
+
+#rightContent {
+	width:400px;
+	margin-top:15px;
+	margin-left:0;
+	margin-right:0;
+	margin-bottom:60px;
+	float:right;
+	padding:0;
+}
+
+#rightContent .player {
+	width:400px;
+	height:160px;
+	padding:0;
+	margin-bottom:5px;
+}
+
+#rightContent .sponsors {
+	width:375px;
+	/*height:160px;*/
+	height:95px;
+	background:url(/images/clubnight/sponsors.png) top left no-repeat;
+	padding-top:65px;
+	padding-left:25px;
+	margin-top:5px;
+	margin-bottom:5px;
+}
+#rightContent .sponsors_cont {
+	width:375px;
+	/*height:160px;*/
+	height:95px;
+	padding-top:64px;
+	background:url(/images/clubnight/sponsor02.gif) no-repeat;
+	padding-left:25px;
+	margin-top:5px;
+	margin-bottom:5px;
+}
+
+
+.sponsors ul {
+	padding:0;
+}
+
+.sponsors ul li {
+	float:left;
+	margin-right:20px;
+	padding:0px;
+	list-style:none;
+	height:67px;
+	width:67px;
+}
+
+
+.sponsors ul li a {
+	background-color:#EAEAEA;
+}
+
+
+.sponsors_cont .logosall {
+	width:auto;
+	height:67px;
+	padding:0;
+	
+	
+}
+
+.sponsors_cont .logosmall {
+	width:67px;
+	height:67px;
+	margin-right:20px;
+	padding:0;
+	float:left;
+}
+
+.sponsors_cont .logosmall a {
+	background-color:#EAEAEA;
+}
+
+/* ***********BANNER ********** */
+
+
+.sub-header {
+	margin: 0 0 10px 0;
+	height:314px;
+	width: 558px;
+	background:transparent url(/images/clubnight/shadow.png)no-repeat bottom center;  }
+
+
+
+#slider { 
+	position:relative; 
+	width:560px; 
+	height:323px; 
+	overflow:hidden; }
+	
+#slider #slider_copy {
+	z-index:1000; 
+	width:547px; 
+	height:60px; 
+	float:right;
+	position:relative; 
+	top:-80px; 
+	left:-8px;
+	background:transparent url("../images/trans.png") repeat; }
+	
+#slider #slider_copy #project_caption {
+	display:none; 
+	padding:7px 10px; 
+	font-size:1.1em;
+	color:#fff; 
+	float:left; 
+	font-weight: bold;
+	text-shadow: #383838 0px 0.5px 0px;
+	width:auto;
+	background:transparent; }
+	
+#slider #slider_copy #project_caption a {
+	margin-left:8px; 
+	font-weight: normal; 
+	font-size:1em;
+	color:#ffffff !important;
+	text-shadow: #383838 0px 0.5px 0px;
+	background:transparent; }
+	
+#slider #slider_copy #project_caption a:hover {
+	text-decoration:none; 
+	color:#fff;
+	background:transparent; }
+	
+#slider #slider_copy #slide_navigation{
+	position:absolute;
+	right:10px;
+	top:-230px }
+	
+#slider #slider_copy #slide_navigation a { 
+	text-indent:-9999px; 
+	display:block; 
+	width:12px; 
+	height:12px; 
+	float:left; 
+	margin-left:5px; 
+	cursor:pointer; 
+	overflow:hidden;
+	background:transparent url("../images/slide_navigation_noactive.png") no-repeat 0 0; }
+	
+#slider #slider_copy #slide_navigation a:hover { 
+	background:transparent url("../images/slide_navigation_hover.png") no-repeat 0 0; }
+	
+#slider #slider_copy #slide_navigation a.activeSlide { 
+	background:transparent url("../images/slide_navigation_hover.png") no-repeat 0 0; }
+	
+#slider li span.slide_caption {
+	display:none; }
+
+#slides {
+	position: relative;
+	background-color:#fff; 
+	overflow:hidden; 
+	width: 560px; 
+	height:314px;
+	margin:0; 
+	padding:0; }
+
+
+
+/* ********* TABS ********* */
+#tabMenu {
+	margin:0;
+	padding:5px 0 0 15px;
+	list-style:none;
+	}
+	
+#tabMenu li.event {
+	float:left;
+	height:53px;
+	width:171px;
+	cursor:pointer;
+	cursor:hand; 
+	margin-left:-6px;
+	}
+
+.gig_content {
+	display:block;
+	padding-left:30px;
+	width:520px;
+	padding-bottom:20px;
+	overflow:hidden; 
+	}	
+#tabMenu li.gig {
+	float:left;
+	height:53px;
+	width:144px;
+	cursor:pointer;
+	cursor:hand; 
+	margin-left:-6px;
+	}
+	
+#tabMenu li.clubgallery {
+	float:left;
+	height:53px;
+	width:255px;
+	cursor:pointer;
+	cursor:hand; 
+	margin-left:-6px;
+	}
+	
+li.event {
+	background:url(/images/clubnight/tabEvents.gif) no-repeat 0 -32px;
+	background-position:0 -54px;
+	}
+	
+li.gig {
+	background:url(/images/clubnight/tabGig.gif) no-repeat 0 -32px;
+	background-position:0 -54px;
+	}
+	
+li.clubgallery {
+	background:url(/images/clubnight/tabGallery.gif) no-repeat 0 -32px;
+	background-position:0 -54px;
+	
+	}
+/*--------------------------------------------------------------------*/
+.midList{
+	padding-left:30px;
+	overflow:hidden;
+}
+#tabMenu li.left {
+	float:left;
+	height:53px;
+	width:177px;
+	cursor:pointer;
+	cursor:hand; 
+	margin-left:-6px;
+	}
+
+.gig_content {
+	display:block;
+	padding-left:30px;
+	width:520px;
+	padding-bottom:20px;
+	overflow:hidden; 
+	}	
+#tabMenu li.center {
+	float:left;
+	height:53px;
+	width:219px;
+	cursor:pointer;
+	cursor:hand; 
+	margin-left:-6px;
+	}
+	
+#tabMenu li.right {
+	float:left;
+	height:53px;
+	width:177px;
+	cursor:pointer;
+	cursor:hand; 
+	margin-left:-6px;
+	}
+        
+.pdctCatelog{
+	width:255px;
+	float:left;
+	margin:0;
+	padding:10px 0;
+	overflow:hidden;  
+}
+.pdctCatelog img{
+	width:89px;  
+	float:left;
+}
+.pdctCatelog label{
+	float:right;
+	width:161px;
+}
+.pdctCatelog label strong{
+	font-family:Verdana;
+	color:#006ed5;
+	font-weight:bold;
+	display:block;
+	line-height:14px;
+	padding:0;
+	margin:0;
+}
+.pdctCatelog label small{ 
+	display:block;
+	line-height:14px;
+	padding:0;
+	margin:0;
+}
+.pdctCatelog label a{
+	background:none;
+}
+.pdctCatelog label .startBtn{
+	margin:10px 0 8px 0;
+	display:block;
+	overflow:hidden;
+}
+.pdctCatelog label .ratedBtn{
+	background:url(/images/clubnight/rateTrakBtn.gif) no-repeat;
+	width:95px;
+	height:25px;
+	display:block;
+}
+/**//*--------------------------------------------------------------------*/
+li.mouseover {
+	background-position:0 0;
+	}
+	
+li.mouseout {
+	background-position:0 -53px;
+	}
+	
+li.mouseout2 {
+	background-position:0 -54px;
+}
+	
+li.selected {
+	background-position:0 0;
+	}
+
+.box {
+	width:572px;
+	margin-top:5px;
+	}
+	
+.boxTop {
+	background:url(/images/clubnight/boxTop.gif) no-repeat;
+	height:11px;
+	clear:both; 
+	}
+
+.boxCap {
+	background:url(/images/clubnight/boxCap.gif) no-repeat;
+	height:11px;
+	clear:both;
+	}
+	
+*html .boxTop {
+	margin-bottom:-2px;
+	}
+	
+.boxBody {
+	background:url(/images/clubnight/boxTop.gif) repeat-y;
+	width:568px; 
+	padding:0; 
+	}
+
+.box_static_body {
+        background:url(/images/clubnight/boxTop.gif) repeat-y;
+	width:auto;
+	padding-left:30px;
+        }
+	
+.boxBottom {
+	background:url(/images/clubnight/boxBottom.gif) no-repeat;
+	height:16px;
+        width:572px;
+	
+	}
+
+
+	
+.boxBody .show0 {
+	display:block;
+	padding-left:30px;
+	width:520px;
+	clear:both;
+	padding-bottom:20px;
+	overflow:hidden;
+	}
+	
+.show1 {
+
+	display:block;
+	padding-left:30px;
+	width:520px;
+	clear:both;
+	padding-bottom:20px;
+	overflow:hidden;
+	}
+	
+.show2 {
+	margin-left:30px;
+	padding-bottom:20px;
+	overflow:hidden;
+	}
+	
+.show2 a {
+	background-color:#FFF;
+}
+
+
+.polaroid {
+	width:120px;
+	height:107px;
+	float:left;
+	background:url(/images/clubnight/polaroid.png) top left no-repeat;
+	display:block;
+}
+
+
+.polaroid .pic {
+	padding-left:11px;
+	padding-top:10px;
+}
+
+.eventer{
+	width:385px;
+	height:auto;
+	overflow:hidden;
+	float:right;
+}
+
+.eventer small {
+	width:385px;
+	padding-top:5px;
+	margin-bottom:20px;
+	color:#5D5D5D;
+	font-size:12px;
+	display:block;
+	
+}
+
+.eventer a {
+	color:#006ed5;
+	background:none;
+	text-decoration:none;
+	padding-bottom:5px;
+}
+
+.eventer a:hover {
+	text-decoration:underline;
+	background-color:#006ed5;
+	color:#fff;
+}
+.eventer label{
+	font-size:18px;
+	color:#006ed5;
+	font-weight:normal;
+	display:block;
+}
+.eventer strong{
+	font-size:14px;
+	color:#006ed5;
+	font-weight:normal;
+	display:block;
+}
+
+
+
+/* ********* SUBSCRIBE ********* */
+
+#subscribe {
+	width:299px;
+	height:74px;
+	background:url(/images/clubnight/subscribe.png) top left no-repeat;
+	padding:43px 26px 0 235px;
+}
+#subscribe form{
+	width:299px;
+	overflow:hidden;
+}
+#subscribe form .subscribe01{
+	background:url(/images/clubnight/suscribe01.jpg) no-repeat right;
+	width:181px;
+	height:21px;
+	float:left;
+	border:none;
+	font-size:11px;
+	color:#fff;
+	font-family:Trebuchet MS;
+	padding:3px 0 0 11px;
+}
+#subscribe form .subscribe02{
+	background:url(/images/clubnight/suscribr02.jpg) no-repeat;
+	width:96px;
+	height:25px;
+	border:none;
+	cursor:pointer;
+	float:right;
+}
+/* ********* FOOTER ********* */
+
+.footer {
+
+	width:auto;
+	height:254px;
+	background-color:#5d5d5d;
+	color:#FFF;
+}
+/*--------------------------remaining home page-------------------------------------*/
+.latestNews_box{
+	width:400px;
+}
+.latest_bg,
+.latest_btm,
+.latest_top{
+	width:400px;
+	display:block;
+}
+.latest_bg{
+	background:url(/images/clubnight/latest_bg.jpg) repeat-y;
+}
+.latest_top{
+	background:url(/images/clubnight/latest_top.jpg) no-repeat;
+}
+.latest_btm{
+	background:url(/images/clubnight/latest_btm.jpg) no-repeat bottom;
+}
+.content_latestNews_box{
+	padding:23px 24px;
+	width:352px;
+}
+.content_latestNews_box .cont_latest{
+	background:url(/images/clubnight/txt01.gif) no-repeat;
+	width:144px;
+	height:18px;
+	margin-bottom:20px;
+}
+.relaunce{
+	width:352px;
+	overflow:hidden;
+	padding-bottom:17px;
+}
+.relaunceLFT{
+	background:url(/images/clubnight/red_box_news.png) no-repeat;
+	height:40px;
+	float:left;
+	width:33px;
+	margin-top:6px;
+}
+.relaunceLFT label{
+	display:block;
+	font-size:17px;
+	color:#FFFFFF;
+	line-height:17px;
+	font-weight:bold;
+	text-align:center;
+}
+.relaunceLFT span{
+	display:block;
+	font-size:10px;
+	color:#262024;
+	line-height:16px;
+	font-weight:bold;
+	text-align:center;
+}
+.relaunceRGT{
+	width:308px;
+	float:right;
+}
+.relaunceRGT strong{
+	font-size:14px;
+	color:#006ed5;
+	display:block;
+}
+
+.relaunceRGT span{
+	font-size:12px;
+	color:#006ed5;
+	display:block;
+	padding-bottom:8px;
+}
+.relaunceRGT p{
+	font-size:12px;
+	color:#5D5D5D;
+	padding:0;
+	margin:0;
+}
+.relaunceRGT a{
+	font-size:12px;
+	width:85px;
+	color:#006ed5;
+	background:none;
+	margin-top:10px;
+	display:block;
+}
+
+.relaunceRGT a:hover {
+	color:#FFF;
+	background:#006ed5;
+}
+
+/*-----------------cont_footer--------------------*/
+#cont_footer{
+	width:950px;
+	margin:0 auto;
+}
+
+.cont_footer_top{
+	width:950px;
+	height:180px;
+	background:#3E3E3E;
+	position:relative;
+	top:20px;
+}
+.footer_mainCont{
+	padding:27px 15px 0 10px;
+	width:925px;
+	height:153px;
+}
+.all_link_footer{
+	width:925px;
+	border-bottom:2px solid #656565;
+	padding-bottom:15px;
+	overflow:hidden;
+}
+.all_link_footer ul{
+	float:left;
+}
+.all_link_footer ul li{
+	display:block;
+}
+.all_link_footer ul li a{
+	line-height:18px;
+	font-size:12px;
+	color:#7B7B7B;
+	background:none;
+}
+.all_link_footer ul li a:hover{
+	color:#fff;
+}
+
+.all_link_footer ul .Competitions{
+	padding-bottom:12px;
+}
+.all_link_footer ul .Competitions a{
+	font-size:14px;
+	font-weight:bold;
+}
+.all_link_footer01{
+	width:221px;
+}
+
+.all_link_footer02{
+	width:185px;
+}
+.all_link_footer03{
+	width:214px;
+}
+.all_link_footer04{
+	width:170px;
+}
+.all_link_footer05{
+	width:130px;
+}
+/*----------------sub_menu_footer--------------------*/
+.sub_menu_footer{
+	width:925px;
+	padding-top:16px;
+}
+.sub_menu_footer ul{
+	width:925px;
+	overflow:hidden;
+	list-style:none;
+}
+.sub_menu_footer ul li{
+	float:left;
+	padding:0 9px;
+	background:url(/images/clubnight/libdr.gif) no-repeat left;
+}
+.sub_menu_footer ul li a{
+	background:none;
+	font-size:11px;
+	color:#7B7B7B;
+	font-family:Trebuchet MS;
+}
+.sub_menu_footer ul li a:hover{
+	color:#fff;
+}
+
+.sub_menu_footer ul .sub_menu_footerFst{
+	background:none;
+}
+/*--------------------foooter_low--------------*/
+#foooter_low{
+	width:930px;
+	overflow:hidden;
+	padding-left:20px;
+	margin-top:36px;
+}
+.txt_ftr_low{
+	width:622px;
+	float:left;
+	font-size:11px;
+	color:#727272;
+	font-family:Trebuchet MS;
+}
+.foooter_low_rgt{
+	width:308px;
+	float:right;
+}	
+
+.foooter_low_rgt ul {
+list-style:none;
+	padding-top:5px;
+	float:left;
+	overflow:hidden;
+	width:308px;
+}
+.foooter_low_rgt ul li {	
+	float:left;
+	padding:0;
+	margin:0;
+
+}
+
+
+
+.foooter_low_rgt a{
+	display:block;
+	float:left;
+	font-size:11px;
+	color:#727272;
+	font-family:Trebuchet MS;
+}
+.foooter_low_rgt a:hover{
+	color:#fff;
+}
+
+.pic01{
+	background:url(/images/clubnight/ftr_pic01.gif) no-repeat;
+	height:14px;
+	margin-right:22px;
+	padding-left:26px;
+}
+.pic02{
+	background:url(/images/clubnight/ftr_pic02.gif) no-repeat;
+	height:14px;
+	padding-left:22px;
+	margin-right:16px;
+}
+.pic03{
+	background:url(/images/clubnight/ftr_face.gif) no-repeat;
+	height:14px;
+	padding-left:22px;
+	margin-right:18px;
+}
+.pic04{
+	background:url(/images/clubnight/ftr_pic03.gif) no-repeat;
+	height:16px;
+	padding-left:25px;
+}
+/*----------------------------content page-------------------------------------------------------*/
+#con_contLft{
+	width:554px;
+	padding:10px 0 0 4px;
+}
+.con_banner{
+	width:549px;
+	height:147px;
+	margin-bottom:17px;
+}
+/*----------------remain_cont_Lft----------------------*/
+.remain_cont_Lft{
+	padding-left:10px;
+	width:544px;
+}
+.link_row_contPage{
+	width:544px;
+	padding-bottom:5px;
+}
+.link_row_contPage ul{
+	width:544px;
+}
+.link_row_contPage ul li{
+	display:inline;
+}
+.link_row_contPage ul li a{
+	font-size:12px;
+	color:#5D5D5D;
+	background:none;
+}
+.link_row_contPage ul .cont_select a{
+	color:#006ed5;
+	background:none;
+	
+}
+.link_row_contPage ul li a:hover{
+	color:#FFF;
+	background-color:#006ed5;
+}
+.remain_cont_Lft h3{
+	font-size:20px;
+	color:#006ed5;
+	font-weight:bold;
+}
+/*-----------inp_cont_page-----------------*/
+#inp_cont_page{
+	width:544px;
+}
+#inp_cont_page form{
+	width:544px;
+}
+.all_cont_inp{
+	width:544px;
+}
+.all_cont_inp dt{
+	width:514px;
+	padding-right:30px;
+	font-size:12px;
+	color:#5D5D5D;
+	line-height:22px;
+	padding-top:15px;
+	padding-bottom:13px;
+}
+.all_cont_inp dd{
+	display:block;
+	padding-bottom:16px;
+	overflow:hidden;
+}
+.all_cont_inp dd .inp_cont02{
+	float:left;
+	margin-right:10px;
+}
+.all_cont_inp dd label{
+	display:block;
+	font-size:12px;
+	color:#5D5D5D;
+	padding-bottom:5px;
+}
+.all_cont_inp dd label sup{
+	color:#006ed5;
+}
+.all_cont_inp dd .inp_cont01{
+	width:253px;
+	height:20px;
+	background:#FEFEFE;
+	border:1px solid #A9A9A9;
+	overflow:hidden;
+	padding:2px 0 0 3px;	
+	font-size:12px;
+	color:#5D5D5D;
+}
+.all_cont_inp dd .inp_cont02{
+	width:253px;
+	height:20px;
+	background:#FEFEFE;
+	border:1px solid #006ed5;
+	overflow:hidden;
+	padding:2px 0 0 3px;	
+	font-size:12px;
+	color:#5D5D5D;
+}
+.all_cont_inp dd span{
+	background:url(/images/clubnight/inp_btn_cont.gif) no-repeat;
+	width:208px;
+	height:38px;
+	display:block;
+	float:left;
+	position:relative;
+	top:-7px;
+}
+.all_cont_inp dd span input{
+	background:none;
+	border:none;
+	padding:6px 0 0 20px;
+	font-size:10px;
+	color:#FFFFFF;
+	width:188px;
+	height:28px;
+}
+.all_cont_inp .inp_bg02{
+	padding-bottom:0;
+}
+.all_cont_inp dd textarea{
+	width:256px;
+	height:92px;
+	background:#FEFEFE;
+	border:1px solid #A9A9A9;
+	overflow:hidden;
+	font-size:12px;
+	color:#5D5D5D;
+}
+.inp_cont03{
+	background:url(/images/clubnight/sub_btn_cont.gif) no-repeat;
+	width:96px;
+	height:25px;
+	border:none;
+	cursor:pointer;
+	margin-left:162px;
+}
+/*-----------------------------News page------------------------*/
+#content_news_page{
+	width:538px;
+	padding:15px 5px 0  1px;
+}
+.inner_news{
+	width:538px;
+	overflow:hidden;
+	padding-bottom:20px;
+}
+.news_tab_box{
+	width:495px;
+	float:right;
+}
+.news_tab_box_bg,
+.news_tab_box_btm,
+.news_tab_box_top{
+	width:495px;
+	display:block;
+}
+.news_tab_box_bg{
+	background:url(/images/clubnight/tab_news_bg.gif) repeat-y;
+}
+.news_tab_box_btm{
+	background:url(/images/clubnight/tab_news_btm.gif) no-repeat bottom;
+}
+.news_tab_box_top{
+	background:url(/images/clubnight/tab_news_top.gif) no-repeat;
+}
+/*----------------------cont_news_tab_box---------------*/
+.cont_news_tab_box{
+	padding:10px 20px 0 36px;
+	width:439px;
+}
+.cont_news_tab_box strong{
+	font-size:14px;
+	color:#006ed5;
+	display:block;
+}
+
+.cont_news_tab_box span{
+	font-size:12px;
+	color:#006ed5;
+	display:block;
+	padding-bottom:8px;
+}
+.cont_news_tab_box p{
+	font-size:12px;
+	color:#5D5D5D;
+	line-height:22px;
+	padding-left:0;
+	margin-left:0;
+	padding-bottom:5px;
+}
+.news_number{
+	width:538px;
+	padding-bottom:60px;
+}
+.news_number ul{
+	width:538px;
+}
+.news_number ul li{
+	display:inline;
+	padding-right:5px;
+}
+.news_number ul li a{
+	line-height:20px;
+	padding:0 5px;
+	background:none;
+	border:1px solid #5D5D5D;
+	color:#363636;
+	font-family:Trebuchet MS;
+	font-size:11px;
+}
+.news_number ul li a:hover, .news_number ul .news_select a{
+	color:#006ed5;
+}
+/*-------------------news_club_box----------------------*/
+.news_club_box{
+	width:400px;
+}
+.club_bg,
+.club_top,
+.club_btm{
+	width:400px;
+	display:block;
+}
+.club_bg{
+	background:url(/images/clubnight/club_bg.jpg) repeat-y;
+}
+.club_top{
+	background:url(/images/clubnight/club_top.jpg) no-repeat;
+}
+.club_btm{
+	background:url(/images/clubnight/club_btm.jpg) no-repeat bottom;
+}
+.cont_news_club_box{
+	padding:18px 8px 17px 13px;
+	width:379px;
+}
+.club_inner{
+	background:#E8E8E8 url(/images/clubnight/club_inner.jpg) repeat-x;
+	width:379px;
+}
+.club_inner h3{
+	background:url(/images/clubnight/txt02.png) no-repeat;
+	width:157px;
+	height:19px;
+	margin-left:13px;
+	margin-bottom:15px;
+}
+.club_img{
+	padding-left:6px;
+	width:373px;
+	overflow:hidden;
+}
+.club_img img{
+	float:left;
+	margin-right:11px;
+	display:block;
+}
+.club_img .club_pic04{
+	margin-right:0;
+	padding-right:0;
+}
+/*---------------------Blog Page-------------------------*/
+#blog_cont{
+	width:539px;
+	padding-right:5px;
+	padding-top:10px;
+}
+.blog_shadow{
+	width:539px;
+	background:url(/images/clubnight/dot_bdr.jpg) repeat-x bottom;
+	padding-bottom:15px;
+	margin-bottom:18px;
+}
+.blog_shadow strong{
+	font-size:14px;
+	color:#006ed5;
+	padding-bottom:5px;
+	display:block;
+}
+.blog_shadow label{
+	font-size:12px;
+	color:#006ed5;
+	padding-bottom:15px;
+	display:block;
+}
+.blog_shadow label span{
+	font-weight:bold;
+}
+.blog_shadow p{
+	margin-left:0;
+	padding:15px 0 10px 0;
+	font-size:12px;
+	color:#5D5D5D;
+	line-height:22px;
+}
+.blog_shadow a{
+	font-size:12px;
+	color:#006ed5;
+	background:none;
+}
+
+.blog_shadow a:hover{
+	color:#FFF;
+	background:#006ed5;
+}
+.content_latestNews_box .blog_club{
+	background:url(/images/clubnight/txt03.jpg) no-repeat;
+	width:114px;
+	height:17px;
+	margin-bottom:14px;
+}
+.blog_london{
+	width:352px;
+	padding-bottom:11px;
+	overflow:hidden;
+	line-height:27px;
+}
+.blog_london h3{
+	font-size:20px;
+	color:#006ed5;
+	font-weight:bold;
+	margin-right:16px;
+}
+.blog_london h3,.blog_london h2,.blog_london small,.blog_london label{
+	float:left;
+}
+.blog_london label{
+	font-size:14px;
+	color:#006ed5;
+	font-weight:bold;
+	margin-right:18px;
+}
+.blog_london h2{
+	font-size:26px;
+	color:#006ed5;
+	font-weight:bold;
+	margin-right:18px;
+}
+.blog_london small{
+	font-size:10px;
+	color:#006ed5;
+	font-weight:bold;
+	margin-right:18px;
+}
+.blog_london2{
+	width:352px;
+	padding-bottom:11px;
+	overflow:hidden;
+	line-height:27px;
+}
+.blog_london2 h3{
+	font-size:16px;
+	color:#006ed5;
+	font-weight:bold;
+	margin-right:16px;
+}
+.blog_london2 h3,.blog_london2 h2,.blog_london2 small,.blog_london2 label{
+	float:left;
+}
+.blog_london2 label{
+	font-size:18px;
+	color:#006ed5;
+	font-weight:bold;
+	margin-right:18px;
+}
+.blog_london2 h2{
+	font-size:30px;
+	color:#006ed5;
+	font-weight:bold;
+	margin-right:18px;
+}
+
+.blog_london3{
+	width:352px;
+	padding-bottom:11px;
+	overflow:hidden;
+	line-height:27px;
+}
+.blog_london3 h3{
+	font-size:14px;
+	color:#006ed5;
+	font-weight:bold;
+	margin-right:16px;
+}
+.blog_london3 h3,.blog_london3 h2,.blog_london3 small,.blog_london3 label{
+	float:left;
+}
+.blog_london3 label{
+	font-size:18px;
+	color:#006ed5;
+	font-weight:bold;
+	margin-right:18px;
+}
+.blog_london3 h2{
+	font-size:22px;
+	color:#006ed5;
+	font-weight:bold;
+	margin-right:18px;
+}
+.content_latestNews_box .blog_archive{
+	background:url(/images/clubnight/txt04.jpg) no-repeat;
+	width:169px;
+	height:18px;
+	margin-bottom:13px;
+}
+.bloog_cont_archi{
+	width:352px;
+}
+.bloog_cont_archi strong{
+	font-size:14px;
+	color:#006ed5;
+	padding-bottom:13px;
+	display:block;
+}
+/*--------------------------Event Page------------------------------*/
+.event_cont{
+	width:539px;
+	background:url(/images/clubnight/dot_bdr.jpg) repeat-x bottom;
+	margin-bottom:20px;
+}
+.event_cont p{
+	margin-left:0;
+	font-size:12px;
+	color:#5D5D5D;
+	line-height:22px;
+	padding-bottom:5px;
+}
+.event_cont img{
+	margin-bottom:15px;
+}
+.event_cont strong{
+	font-size:14px;
+	color:#006ed5;
+	padding-bottom:5px;
+	display:block;
+}
+.event_cont label{
+	font-size:12px;
+	color:#006ed5;
+	padding-bottom:15px;
+	display:block;
+}
+.slide_txt_event{
+	font-size:12px;
+	font-style:italic;
+	color:#006ed5;
+	padding-bottom:15px;
+}
+.event_cont span{
+	font-size:12px;
+	color:#5D5D5D;
+	padding-bottom:15px;
+	display:block;
+	font-weight:bold;
+}
+.event_list{
+	width:539px;
+}
+.event_list li{
+	display:block;
+	line-height:28px;
+	font-size:12px;
+	color:#5D5D5D;
+	background:url(/images/clubnight/icon.jpg) no-repeat 0 12px;
+	padding-left:22px;
+}
+/*-------------------event_cont02-----------------*/
+.event_cont02{
+	width:539px;
+}
+
+.event_cont02 img{
+	margin-bottom:15px;
+}
+.event_cont02 strong{
+	font-size:14px;
+	color:#006ed5;
+	padding-bottom:5px;
+	display:block;
+}
+.event_cont02 label{
+	font-size:12px;
+	color:#006ed5;
+	padding-bottom:15px;
+	display:block;
+}
+.event_cont02 p{
+	margin-left:0;
+	font-size:12px;
+	color:#5D5D5D;
+	line-height:22px;
+	padding-bottom:5px;
+}
+/*------------------------------gallary page-----------------------*/
+
+.link_row_gallary{
+	width:948px;
+	padding:15px 0 38px 14px;
+}
+.link_row_gallary ul{
+	width:948px;
+}
+.link_row_gallary ul li{
+	display:inline;
+}
+.link_row_gallary ul li a{
+	font-size:12px;
+	color:#5D5D5D;
+	background:none;
+}
+.link_row_gallary ul .cont_select a {
+	color:#006ed5;
+	background:none;
+}
+.link_row_gallary ul li a:hover{
+	color:#FFF;
+	background-color:#006ed5;
+}
+#siteContent .Gallery{
+	font-size:20px;
+	color:#006ed5;
+	font-weight:bold;
+	padding-left:14px;
+}
+.gallary_all_img{
+	width:948px;
+	padding-left:14px;
+	padding-top:25px;
+}
+.gallary_all_img dl{
+	width:948px;
+	overflow:hidden;
+}
+
+.gallary_all_img dl dd{
+	float:left;
+	margin-right:14px;
+	margin-bottom:34px;
+	background:url(/images/clubnight/img_bg.jpg) no-repeat;
+	width:200px;
+	height:150px;
+	padding:16px 14px 17px 12px;
+}
+.gallary_all_img dl .g_pic04{
+	margin-right:0;
+}
+.gallary_link{
+	width:948px;
+	overflow:hidden;
+	padding-bottom:15px;
+}
+.gl_Previous{
+	font-size:16px;
+	background:none;
+	font-weight:bold;
+	float:left;
+	color:#006ed5;
+	display:block;
+}
+.gl_Next{
+	font-size:16px;
+	background:none;
+	font-weight:bold;
+	float:right;
+	color:#006ed5;
+	display:block;
+}
+.gallary_link a:hover{
+	color:#FFF;
+	background:#006ed5;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

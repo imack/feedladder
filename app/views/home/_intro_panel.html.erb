@@ -1,0 +1,36 @@
+<div class="latestNews_box"><!--start latestNews_box-->
+  <div class="latest_bg">
+    <div class="latest_top">
+      <div class="latest_btm">
+        <div class="content_latestNews_box">
+          <table border="0" cellspacing="2">
+            <tr>
+              <td style="padding: 0 5px 5px 0;" rowspan="3"><%= image_tag @current_feed.user[:profile_image_url]  %></td>
+              <td><span style="font-size: 1.17em;font-weight: bold;"><%=  link_to h(@current_feed.user.name), feed_root_url(:subdomain => @current_feed.user.login) %></span></td>
+            </tr>
+
+            <tr>
+              <td>Followers: <%= @current_feed.user[:followers_count]  %></td>
+            </tr>
+          </table>
+
+          <div>
+            <%= @current_feed.description %>
+          </div>
+
+          <div style="text-align:center">
+            <%= link_to "Submit To Feed", submit_path %>&nbsp;|&nbsp;
+            <%= link_to "Twitter Page", "http://twitter.com/#{@current_feed.user.login}" %>
+            <% if @current_feed[:facebook_page_url] != "" %>
+              &nbsp;|&nbsp;<%= link_to "Facebook Page", @current_feed[:facebook_page_url] %>
+            <% end %>
+          </div>
+          <div class="fb_like" style="margin-top:10px;"><fb:like href="<%= like_href_destination(@current_feed) %>" layout="standard"
+              show_faces="true" width="300" height="40"
+              action="like" colorscheme="light"></fb:like>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<% if @current_feed %>
+  <%= render :partial => "home/intro_panel" %>
+
+  <% if @show_ads %>
+    <%= render :partial => "home/ads" %>
+  <% end %>
+  <!-- render :partial => "home/feed_rules" -->
+  <%= render :partial => "home/follow_twitter" %>
+
+  <% if @current_feed.is_admin( current_user ) %>
+    <%= render :partial => "home/admin_panel" %>
+  <% end %>
+<% else %>
+  <%= render :partial => "home/top_feeds" %>
+<% end %>

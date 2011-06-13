@@ -1,0 +1,21 @@
+<div class="latestNews_box"><!--start latestNews_box-->
+  <div class="latest_bg">
+    <div class="latest_top">
+      <div class="latest_btm">
+        <div class="content_latestNews_box">
+            <div>
+              Tweets are <span style='color:green'><%= @current_feed.schedule_size %></span>
+            </div>
+            <div>
+              <% if @current_feed[:allow_anonymous_submits] %>
+                Submissions <span style='color:green'>can be made by anyone</span>
+              <% else %>
+                Submissions <span style='color:green'>must be made by logged in user</span>
+              <% end %>
+            </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

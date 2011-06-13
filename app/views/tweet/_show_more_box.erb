@@ -1,0 +1,25 @@
+<% content_for :javascript do%>
+
+<script type="text/javascript">
+
+  $(document).ready(function(){
+        $("#<%= raw "#{type}_box" %> a").click(function(){
+            $(this).attr('href', $(this).attr('href') + "&offset=" +$("#<%= raw "#{type}_offset" %>").val());
+            $("#<%= raw "#{type}_spinner" %>").show();
+            $(this).hide();
+        });
+  });
+</script>
+
+<% end %>
+
+
+<input type="text" id="<%= raw "#{type}_offset" %>" class="show_more_index" value="20" style="display: none"/>
+<div class="show_more_box" id="<%= raw "#{type}_box" %>" style="height:20px;">
+    <%= link_to 'more',
+        {:controller=>"feed", :action=>"more_tweets", :type => type,
+        :feed_id=>@current_feed.id, :format => :js}, :remote => true
+    %><br>
+  <%= image_tag "loading.gif", :id =>"#{type}_spinner", :style=>"height:20px; width:20px;display:none;" %>
+</div>
+

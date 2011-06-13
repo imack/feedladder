@@ -1,0 +1,63 @@
+
+<%= include_javascripts :workspace %>
+
+
+<% if !@current_feed.nil? and current_user and @current_feed.is_admin( current_user ) %>
+  <%= javascript_include_tag "admin_application"  %>
+<% end %>
+
+<script type="text/javascript"
+        src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js"></script>
+
+<div id="fb-root"></div>
+<script type="text/javascript" src="http://connect.facebook.net/en_US/all.js"></script>
+<script type="text/javascript">
+  FB.init({
+    appId  : '176672869030878',
+    status : true, // check login status
+    cookie : true, // enable cookies to allow the server to access the session
+    xfbml  : true  // parse XFBML
+  });
+
+
+  $(function(){
+    if ("<%= flash[:notice] %>".length > 0){
+        $.jGrowl("<%= flash[:notice] %>", { life:7500, header:"Notice" } );
+    }
+  });
+</script>
+
+
+
+ <% if !@new_tweet.nil? and !(current_user and @current_feed.is_admin( current_user )) %>
+    <script type="text/javascript">
+        $(function(){
+            $("#dialog-modal").dialog({
+                height: 240,
+                width: 320,
+                modal: true
+            });
+            
+            $(".auto_close").click(function(){
+                $("#dialog-modal").dialog('close');
+            });
+        });
+    </script>
+    <%= render :partial => 'home/new_submission_popup', :locals => {:new_tweet => @new_tweet} %>
+<% end %>
+
+<% if (@check_admin.nil? or !@check_admin) and Rails.env.production? %>
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-18247471-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+<% end %>

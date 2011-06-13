@@ -1,0 +1,34 @@
+
+<li id="<%= tweet.id %>" class="tweet tweet_body">
+  <div class="item_top">
+    <span class="status_body">
+      <b><%= @current_feed[:tag_enabled] ? tweet.tag : tweet.feed_username  %></b>
+      <div class="tweet_text">
+        <%= raw h(tweet.text).gsub("\n", "<br />") %>
+      </div>
+      <div id="message_stat">
+        <span class="status_stats" style="float:left;">
+          <%= link_to "funny", nil,
+            :class=>"vote_link up_vote", :id =>tweet.funny_code( session ),
+            :onclick=>" " %>
+          (<span class="win_votes"><%= tweet.wins %></span>) |
+          <%= link_to "not so much", nil,
+            :class=>"vote_link down_vote", :id =>tweet.lame_code( session ),
+            :onclick=>" " %>
+          (<span class="loss_votes"><%= tweet.losses %></span>)
+        </span>
+        <%= raw light_status_show(tweet) %>
+        <table class="sharing_tab">
+          <tr>
+            <td class="fb_cell" width="60px">
+              <%= link_to image_tag("blank.png", :class=>"facebook_icon"), "http://facebook.com/sharer.php?u=http://#{@current_feed.user.login}.feedladder.com/t/#{tweet.id}",:target => '_blank' %>
+            </td>
+            <td class="twitter_cell" width="60px">
+              <%= link_to image_tag("blank.png", :class=>"twitter_icon"), "http://twitter.com/?status=#{tweet.tweet_share(true)}",:target => '_blank'  %>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </span>
+  </div>
+</li>

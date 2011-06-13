@@ -1,0 +1,30 @@
+<!DOCTYPE html >
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <%= csrf_meta_tag %>
+  <%= yield :meta %>
+  <title>Feed Ladder <%= '| ' + @current_feed.user.name unless @current_feed.nil? %></title>
+  <%= render :partial => 'layouts/header_imports' %>
+  <%= yield :css %>
+</head>
+<body>
+  <div id="main-container">
+    <div id="main-area">
+      <%= render :partial => 'home/header' %>
+         <div id="siteContent">
+            <div id="leftContent">
+                <%= yield  %>
+            </div>
+            <div id="rightContent">
+              <%= render :partial => 'home/right_column' %>
+           </div>
+        </div>
+    </div>
+    <%= render :partial => 'home/footer' %>
+  </div>
+</body>
+<%= render :partial => 'layouts/footer_imports' %>
+<%= yield :javascript %>
+</html>

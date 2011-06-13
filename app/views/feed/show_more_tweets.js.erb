@@ -1,0 +1,11 @@
+$("#<%= raw @list_type %>").append("<%= escape_javascript( render :partial => "tweet/tweet", :collection =>@tweets ) %>")
+
+$("#<%= raw @list_type %>_offset").val('<%= raw @offset+@tweets.length %>')
+
+$("#<%= raw "#{@list_type}_box" %> a").show();       
+
+$("#<%= raw "#{@list_type}_spinner" %>").hide();
+
+<% if !@current_feed.nil? and current_user and @current_feed.is_admin( current_user ) %>
+    $(".status_indicators").show(); //hidden by default
+<% end %>

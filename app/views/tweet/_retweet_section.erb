@@ -1,0 +1,40 @@
+<% content_for :javascript do %>
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+          prepTweets();
+          var data = "<%= @following %>".split(" ");
+          $("#screen_name").autocomplete(data);
+
+          $("#submit_filter").click(function(){
+            $("#submit_filter").hide();
+            $("#loading_filter").show();
+          });
+        });
+
+    </script>
+
+<% end %>
+
+
+<div class="tweet_list">
+  <h2>Click Tweet to Submit as Retweet</h2>
+
+    <%= form_tag :url => {:controller=>"tweet", :action=>"submit"}, :html => {:id => 'filter_form'}, :remote => true do |f|  %>
+        Filter by User @<%= text_field_tag :screen_name %>
+        <%=  hidden_field_tag(:last_id, @last_id) %>
+        <%= submit_tag "Filter", {:id=>"submit_filter"} %>
+        <%= image_tag "loading.gif", {:id=>"loading_filter", :style=>"display:none;height:15px"} %>
+    <% end %>
+
+    <ul id="tweets" class='tweets'>
+        <%  @tweets.each do |tweet|%>
+          <%= render :partial => "raw_tweet",:locals => {:tweet => tweet} %>
+        <% end %>
+    </ul>
+
+    <div id="more_tweets_box">
+      <%= render :partial => "more_tweets" %>
+    </div>
+  </div>
+  <div id="dialog"></div>
